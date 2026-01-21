@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MOONBUNNY — Hop the Candles to the Moon</title>
+  <meta name="description" content="MOONBUNNY is a cute platformer meme coin vibe. Entertainment only — no promises, just hops." />
+  <meta property="og:title" content="MOONBUNNY" />
+  <meta property="og:description" content="Hop the green candles to the moon — cute Mario-style meme energy." />
+  <meta property="og:image" content="assets/moonbunny_hero.png" />
+  <meta name="theme-color" content="#0b1024" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%90%B0%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="bg">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="glow" aria-hidden="true"></div>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="MOONBUNNY home">
+      <span class="logo">🐰</span>
+      <span class="wordmark">MOONBUNNY</span>
+      <span class="tag">hop the candles</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#story">Story</a>
+      <a href="#game">Banner</a>
+      <a href="#token">Token</a>
+      <a href="#gallery">Art</a>
+      <a href="#links">Links</a>
+    </nav>
+
+    <div class="ctaRow">
+      <button class="btn ghost" id="soundBtn" type="button" aria-pressed="false">Sound: OFF</button>
+      <a class="btn primary" href="#links">Join the vibe</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="heroGrid">
+        <div class="heroText">
+          <div class="pill">🎮 Mario-style • 🟢 Green candles • 🪙 Coins • 🌙 Moon</div>
+          <h1>MOONBUNNY</h1>
+          <p class="lead">
+            A cute platformer meme universe where green candlesticks are platforms and coins are just… coins.
+            <span class="muted">Entertainment only. No promises. Just hops.</span>
+          </p>
+
+          <div class="heroButtons">
+            <a class="btn primary" href="#game">Watch the hop</a>
+            <a class="btn ghost" href="#token">Token info</a>
+          </div>
+
+          <div class="miniCard">
+            <div class="miniRow">
+              <span class="label">Contract (CA)</span>
+              <code id="caText">PASTE_CONTRACT_ADDRESS_HERE</code>
+            </div>
+            <div class="miniRow">
+              <button class="btn tiny" id="copyCA" type="button">Copy CA</button>
+              <span class="hint" id="copyHint">Always verify the contract address.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="heroArt">
+          <img src="assets/moonbunny_hero.png" alt="MOONBUNNY hero art" class="heroImg" />
+          <div class="bubble b1">🟢 platform</div>
+          <div class="bubble b2">🪙 loot</div>
+          <div class="bubble b3">🌙 goal</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="section">
+      <div class="sectionHead">
+        <h2>Story</h2>
+        <p>One day MOONBUNNY discovered that green candles are basically game platforms. So… he started hopping upward.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>🐰 The hero</h3>
+          <p>MOONBUNNY is a cheerful jumper. He doesn’t trade — he hops. He doesn’t predict — he vibes.</p>
+        </article>
+        <article class="card">
+          <h3>🟢 The platforms</h3>
+          <p>Green candlesticks are safe platforms. Red ones are goofy enemies. Coins are coins. The moon is the finish flag.</p>
+        </article>
+        <article class="card">
+          <h3>✨ The vibe</h3>
+          <p>Bright, cute, and meme-first. This is a culture toy — not financial advice, not promises, not a roadmap.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="game" class="section">
+      <div class="sectionHead">
+        <h2>Animated Banner</h2>
+        <p>MOONBUNNY auto-jumps up green candlesticks, grabs coins, and reaches the moon. (Loops forever.)</p>
+      </div>
+
+      <div class="bannerWrap">
+        <canvas id="banner" width="1200" height="520" aria-label="MOONBUNNY jumping banner"></canvas>
+        <div class="bannerOverlay">
+          <div class="legend">
+            <span><i class="dot green"></i> green = platforms</span>
+            <span><i class="dot red"></i> red = enemies</span>
+            <span><i class="dot gold"></i> coins</span>
+            <span><i class="dot moon"></i> moon</span>
+          </div>
+          <div class="bannerBtns">
+            <button class="btn tiny" id="restart" type="button">Restart</button>
+            <button class="btn tiny ghost" id="speed" type="button">Speed: x1</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="token" class="section">
+      <div class="sectionHead">
+        <h2>Token</h2>
+        <p>Keep it simple and meme-safe. Update details after launch.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <h3>Basics</h3>
+          <ul class="list">
+            <li><b>Name:</b> MOONBUNNY</li>
+            <li><b>Ticker:</b> MOONBUNNY</li>
+            <li><b>Chain:</b> <span class="muted">Your choice</span></li>
+            <li><b>Contract:</b> <span class="muted">Paste CA above after launch</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Disclaimer</h3>
+          <p class="muted">
+            MOONBUNNY is a meme project created for entertainment, culture, and community vibes.
+            Nothing on this site is financial advice or a promise of profit.
+          </p>
+          <p class="muted">
+            Always verify links and the contract address from official sources.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="sectionHead">
+        <h2>Art Gallery</h2>
+        <p>Drop your renders here. Replace/extend images in <code>assets/</code>.</p>
+      </div>
+
+      <div class="gallery">
+        <img src="assets/gallery_1.png" alt="MOONBUNNY art 1" />
+        <img src="assets/gallery_2.png" alt="MOONBUNNY art 2" />
+        <img src="assets/gallery_3.png" alt="MOONBUNNY art 3" />
+        <img src="assets/gallery_4.png" alt="MOONBUNNY art 4" />
+        <img src="assets/gallery_5.png" alt="MOONBUNNY art 5" />
+        <img src="assets/gallery_6.png" alt="MOONBUNNY art 6" />
+      </div>
+    </section>
+
+    <section id="links" class="section">
+      <div class="sectionHead">
+        <h2>Links</h2>
+        <p>Placeholders are ready. Paste your real links later.</p>
+      </div>
+
+      <div class="links">
+        <a class="link" href="#" onclick="return false;">💬 Telegram (soon)</a>
+        <a class="link" href="#" onclick="return false;">🐦 X / Twitter (soon)</a>
+        <a class="link" href="#" onclick="return false;">👽 Reddit (soon)</a>
+        <a class="link" href="#" onclick="return false;">🚀 Launch page (soon)</a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footerInner">
+        <span>🐰🌙 MOONBUNNY</span>
+        <span class="muted">Entertainment only • No promises • No financial advice</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
